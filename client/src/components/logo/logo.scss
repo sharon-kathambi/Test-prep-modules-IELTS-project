@@ -1,3 +1,16 @@
 .logo{
-    background-color: aqua; 
+
+    p{
+        margin: 0;
+        font-weight: bold;
+    }
+      
+    img {
+        align-content: flex-end;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
 }

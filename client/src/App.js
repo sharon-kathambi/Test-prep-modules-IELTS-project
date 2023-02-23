@@ -1,14 +1,20 @@
-
-import Logo from './components/logo/Logo';
-import Task from './components/task/Task';
+import { ColorModeContext, useMode } from './theme';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import Dashboard from './pages/dashboard/Dashboard';
 
 function App() {
+  const [theme, colorMode] = useMode();
   return (
-    <div className="App">
-      <Logo />
-      <Task />
-      
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="app">
+          <main className='content'>
+          <Dashboard />
+          </main>
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 
