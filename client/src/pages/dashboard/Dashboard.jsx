@@ -5,8 +5,6 @@ import Topbar from '../../components/global/topbar/Topbar'
 function Dashboard() {
   return (
     <div>
-        <Topbar />
-        <Sidebar />
     </div>
   )
 }

@@ -4,6 +4,9 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import Dashboard from './pages/dashboard/Dashboard';
 import Sidebar from './components/global/sidebar/Sidebar';
 import Topbar from './components/global/topbar/Topbar';
+import { Route, Routes } from 'react-router-dom';
+import Team from './pages/team/Team';
+import Students from './pages/students/Students';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -16,6 +19,11 @@ function App() {
           <Sidebar isSidebar={isSidebar}/>
           <main className='content'>
             <Topbar setIsSidebar={setIsSidebar} />
+            <Routes>
+              <Route path='/' element={ <Dashboard />}/>
+              <Route path='/team' element={ <Team /> }/>
+              <Route path='/students' element={ <Students />}/>
+            </Routes>
           </main>
         </div>
       </ThemeProvider>
