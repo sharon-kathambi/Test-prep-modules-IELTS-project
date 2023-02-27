@@ -148,7 +148,7 @@ const Sidebar = () => {
             />
             <Item
               title="Payment Invoices"
-              to="/invoices"
+              to="/form"
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}

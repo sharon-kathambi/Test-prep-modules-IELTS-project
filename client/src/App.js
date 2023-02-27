@@ -7,6 +7,8 @@ import Topbar from './components/global/topbar/Topbar';
 import { Route, Routes } from 'react-router-dom';
 import Team from './pages/team/Team';
 import Students from './pages/students/Students';
+import Form from './pages/form/Form';
+import Calendar from './pages/calendar/Calendar';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -23,6 +25,8 @@ function App() {
               <Route path='/' element={ <Dashboard />}/>
               <Route path='/team' element={ <Team /> }/>
               <Route path='/students' element={ <Students />}/>
+              <Route path='/form' element={ <Form />} />
+              <Route path='/calendar' element= { <Calendar />} />
             </Routes>
           </main>
         </div>
