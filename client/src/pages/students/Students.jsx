@@ -34,6 +34,8 @@ const Students = () => {
       field: "phone",
       headerName: "Phone Number",
       flex: 1,
+      //function to hide contact with asterisks
+      valueFormatter: ({ value }) => value.replace(/\d(?=\d{4})/g, "*"),
     },
     {
       field: "email",

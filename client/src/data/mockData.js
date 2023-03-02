@@ -80,7 +80,7 @@ export const mockDataTeam = [
       last_name: 'Snow',
       email: "jonsnow@gmail.com",
       DOB: new Date(2002, 1, 20),
-      phone: "(665)121-5454",
+      phone: "123-456-7890",
       gender: 'Female',
       address: "0912 Won Street, Alabama, SY 10001",
       qualification: "Undergraduate",
