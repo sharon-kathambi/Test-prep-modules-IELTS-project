@@ -5,6 +5,7 @@ import Topbar from '../../components/global/topbar/Topbar'
 import { useTheme } from '@emotion/react'
 import Header from '../../components/header/Header';
 import { tokens } from '../../theme'
+import Task from '../../components/task/Task'
 
 function Dashboard() {
   const theme = useTheme();
@@ -64,12 +65,31 @@ function Dashboard() {
       >
         {/* ROW 1 */}
         <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
+          gridColumn="span 6"
+          gridRow= 'span 2'
+          backgroundColor='background.paper'
+          //backgroundColor={colors.primary[400]}
           display="flex"
           alignItems="center"
-          justifyContent="center">
-
+          justifyContent="center"
+          sx={{
+            "& .pro-sidebar-inner": {
+              background: `${colors.primary[400]} !important`,
+            },
+            "& .pro-icon-wrapper": {
+              backgroundColor: "transparent !important",
+            },
+            "& .pro-inner-item": {
+              padding: "5px 35px 5px 20px !important",
+            },
+            "& .pro-inner-item:hover": {
+              color: "#868dfb !important",
+            },
+            "& .pro-menu-item.active": {
+              color: "#6870fa !important",
+            },
+          }}>
+            <Task />
           </Box>
     </Box>
     </Box>

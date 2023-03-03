@@ -7,8 +7,15 @@ import ListItemText from '@mui/material/ListItemText';
 import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import CommentIcon from '@mui/icons-material/Comment';
+import { taskData } from '../../data/mockData';
+import { Box } from '@mui/material';
+import { useTheme } from '@emotion/react';
+import { tokens } from '../../theme';
 
 export default function Task() {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   const [checked, setChecked] = React.useState([0]);
 
   const handleToggle = (value) => () => {
@@ -25,8 +32,8 @@ export default function Task() {
   };
 
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value) => {
+    <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
+      {taskData.map((value) => {
         const labelId = `checkbox-list-label-${value}`;
 
         return (
@@ -49,7 +56,7 @@ export default function Task() {
                   inputProps={{ 'aria-labelledby': labelId }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+              <ListItemText id={labelId} primary={value} />
             </ListItemButton>
           </ListItem>
         );

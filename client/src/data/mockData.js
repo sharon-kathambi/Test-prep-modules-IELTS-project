@@ -421,3 +421,9 @@ export const mockDataTeam = [
       cost: "133.45",
     },
   ];
+
+  export const taskData = [
+    'Demos scheduled', 'Schedule Demo', 'Payment Follow ups', 'New Leads assigned', 'Pending payment follow ups'
+  ]
+
+  export const taskNumbers = [10,23,11,12,30]
