@@ -69,8 +69,9 @@ function Dashboard() {
           display="flex"
           alignItems="center"
           justifyContent="center">
-            
+
           </Box>
+    </Box>
     </Box>
   )
 }
