@@ -13,9 +13,23 @@ import Table from '../../components/table/Table'
 import Task2 from '../../components/task2/Task2'
 import ProgressCircle from '../../components/progressCircle/ProgressCircle'
 
+function createData(name, number){
+  return { name, number}
+}
+
+const performance = [
+  createData('Total Leads', 50),
+  createData('Demos Scheduled', 10),
+  createData('Total Enrolments', 20),
+  createData('Active Students', 40),
+  createData('Full Fee Paid', 20),
+  createData('Partial Payments', 20),
+]
+
 function Dashboard() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
+
 
   return (
     <Box m='20px'>
@@ -117,6 +131,54 @@ function Dashboard() {
               color={colors.blueAccent[500]}
               sx={{ mt: "15px" }}
               >20 students enrolled</Typography>
+          </Box>
+        </Box>
+
+        {/* Row 3 */}
+        <Box
+        gridColumn='span 4'
+        gridRow='span 1'
+        backgroundColor={colors.primary[400]}
+        p='30px'>
+          <Typography variant='h5' fontWeight='600'>Upcoming Events</Typography>
+          <Box>
+            <Typography
+            variant="h5"
+            color={colors.greenAccent[500]}
+            sx={{ mt: "15px" }}
+            fontWeight="600">
+              Event 1
+            </Typography>
+            <Typography
+            variant="h5"
+            color={colors.greenAccent[500]}
+            sx={{ mt: "15px" }}
+            fontWeight="600">
+              Event 2
+            </Typography>
+          </Box>
+        </Box>
+
+        <Box
+        gridColumn='span 8'
+        gridRow='span 1'
+        backgroundColor={colors.primary[400]}
+        p='30px'>
+          <Box 
+            display="flex"
+            justifyContent="space-between">
+          <Typography variant='h5' fontWeight='600'>Monthly Performance</Typography>
+          <Typography variant='h5' fontWeight='400'>Last 30 days</Typography>
+          </Box>
+          {performance.map((item) => (
+            <Box
+            display = 'flex'
+            >
+              <Typography>{item.name}: {item.number}</Typography>
+              </Box>
+          ))}
+          <Box>
+
           </Box>
         </Box>
     </Box>
