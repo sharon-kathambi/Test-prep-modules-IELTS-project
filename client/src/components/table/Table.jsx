@@ -1,4 +1,4 @@
-import { Paper, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Paper, TableCell, TableContainer, TableHead, TableRow, TableBody } from '@mui/material'
 import React from 'react'
 
 function createData(time, trainer1, trainer2){
