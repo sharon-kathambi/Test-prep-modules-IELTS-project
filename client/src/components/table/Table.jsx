@@ -1,5 +1,8 @@
 import { Paper, TableCell, TableContainer, TableHead, TableRow, TableBody } from '@mui/material'
 import React from 'react'
+import { Box, Typography } from '@mui/material'
+import { tokens } from '../../theme'
+import { useTheme } from '@emotion/react'
 
 function createData(time, trainer1, trainer2){
     return { time, trainer1, trainer2}
@@ -15,10 +18,29 @@ const rows = [
 ];
 
 function Table() {
+    const theme = useTheme();
+    const colors = tokens(theme.palette.mode);
+
+    const tableContainerSx = {
+        border: "1px solid rgba(128,128,128,0.4)",
+        width: "max-content",
+        marginLeft: "auto",
+        marginRight: "auto",
+        borderRadius: 2,
+        maxHeight: 500
+      };
   return (
-    <TableContainer component={Paper}>
+    <TableContainer 
+        component={Paper}
+        sx={tableContainerSx}>
         <TableHead>
-            <TableRow>
+            <TableRow
+            sx = {{ display:"flex",
+            justifyContent:"space-between",
+            alignItems:"center",
+            colors:'colors.grey[100]',
+            p:"15px",
+    }}>
                 <TableCell>Time</TableCell>
                 <TableCell>Trainer 1</TableCell>
                 <TableCell>Trainer 2</TableCell>
@@ -27,15 +49,20 @@ function Table() {
         <TableBody>
             {rows.map((row) => (
                 <TableRow
-                key={row.time}>
+                key={row.time}
+                sx = {{ display:"flex",
+        justifyContent:"space-between",
+        alignItems:"center",
+        colors:'colors.grey[100]',
+        p:"15px",
+            }}>
                     <TableCell component='th' scope='row'>{row.time}</TableCell>
                     <TableCell>{row.trainer1}</TableCell>
                     <TableCell>{row.trainer2}</TableCell>
                 </TableRow>
             ))}
         </TableBody>
-    </TableContainer>
-      
+    </TableContainer> 
     
   )
 }

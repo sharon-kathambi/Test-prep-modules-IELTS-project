@@ -21,7 +21,6 @@ function Task2() {
         createData('Pending Payment follow ups', 30)
     ]
     
-
 return (
     <Box>
     <Box
