@@ -11,6 +11,7 @@ import DemoCalendar from '../../components/demoCalendar/DemoCalendar'
 import { mockTransactions } from '../../data/mockData'
 import Table from '../../components/table/Table'
 import Task2 from '../../components/task2/Task2'
+import ProgressCircle from '../../components/progressCircle/ProgressCircle'
 
 function Dashboard() {
   const theme = useTheme();
@@ -86,6 +87,38 @@ function Dashboard() {
         >
           <Table />
        </Box>
+
+       {/* Row 3 */}
+       <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          p="30px"
+        >
+          <Typography variant="h5" fontWeight="600">
+            Monthly Target Achieved
+          </Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mt="25px"
+          >
+            <ProgressCircle size="125" />
+            <Typography
+              variant="h5"
+              color={colors.greenAccent[500]}
+              sx={{ mt: "15px" }}
+            >
+              100 demos schedules
+            </Typography>
+            <Typography
+              variant='h5'
+              color={colors.blueAccent[500]}
+              sx={{ mt: "15px" }}
+              >20 students enrolled</Typography>
+          </Box>
+        </Box>
     </Box>
     </Box>
   )
